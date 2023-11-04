@@ -30,8 +30,8 @@ func squaring(in <-chan int) <-chan int {
 }
 
 func main() {
-	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
-	squared := squaring(pushing(numbers))
+	numbers := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+	squared := squaring(pushing(numbers[:]))
 	// считываем из финального канала все числа
 	for num := range squared {
 		fmt.Printf("%d ", num)

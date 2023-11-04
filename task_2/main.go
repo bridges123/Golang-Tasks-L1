@@ -19,7 +19,7 @@ func waitSync(wg *sync.WaitGroup, ch chan int) {
 }
 
 func main() {
-	numArray := []int{2, 4, 6, 8, 10}
+	numArray := [5]int{2, 4, 6, 8, 10}
 	wg := &sync.WaitGroup{}
 
 	// Канал для передачи результатов в main

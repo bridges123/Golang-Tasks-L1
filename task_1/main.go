@@ -22,10 +22,12 @@ type Action struct {
 	Human
 }
 
+// PrintName выводит информацию об имени человека
 func (h *Human) PrintName() {
 	fmt.Printf("My name is %s\n", h.name)
 }
 
+// AgeDiff возвращает разницу между возрастами текущего человека и переданного возраста
 func (h *Human) AgeDiff(age int) int {
 	return int(math.Abs(float64(h.age - age)))
 }

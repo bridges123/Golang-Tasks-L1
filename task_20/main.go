@@ -5,12 +5,16 @@ import (
 	"strings"
 )
 
+// reverseWords переворачивает слова в строке, проходясь по слайсу слов и добавляя их в билдер
 func reverseWords(str string) string {
-	res := ""
-	for _, sub := range strings.Split(str, " ") {
-		res = sub + " " + res
+	split := strings.Split(str, " ")
+	var res strings.Builder
+	res.Grow(len(str))
+	for i := len(split) - 1; i >= 0; i-- {
+		res.WriteString(split[i])
+		res.WriteString(" ")
 	}
-	return res
+	return res.String()
 }
 
 func main() {
